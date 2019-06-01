@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   before_action :set_trip
-  before_action :set_spot
+  # before_action :set_spot
   before_action :set_location, only: [:show, :edit, :update, :destroy, :set_spot]
   
   def index
@@ -8,6 +8,8 @@ class LocationsController < ApplicationController
   end
 
   def show
+    @spot = Location.get_spot(@location.name)
+
   end
 
   def new
@@ -62,8 +64,7 @@ class LocationsController < ApplicationController
     end
 
 
-    def set_spot
-      @spot = Location.get_spot(@location.name)
+    def set_spot()
     end
 
 

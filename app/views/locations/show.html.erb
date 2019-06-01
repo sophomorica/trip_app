@@ -16,8 +16,8 @@
     <%= @location.address ? @location.address.state : "" %><br/><br/>
       <p>Lat<% @location.address ? @location.address.lat : "" %></p><p>long
       <% @location.address ? @location.address.long : "" %></p>
-      <p><%= @location.image %></p>
-<p><%= @location.fees %></p>
+      <p><%#= @location.image %></p>
+<p>That'll be: <%= @location.fees %></p>
     </div>
   </div>
   <div class="extra content">
@@ -27,6 +27,7 @@
   </div>
 </div>
 
+<%= @spot %>
 
 
 
