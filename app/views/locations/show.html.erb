@@ -16,7 +16,7 @@
     <%= @location.address ? @location.address.state : "" %><br/><br/>
       <p>Lat<% @location.address ? @location.address.lat : "" %></p><p>long
       <% @location.address ? @location.address.long : "" %></p>
-      <p><%#= @location.image %></p>
+      <img src = "<%= @location.image %>"/>
 <p>That'll be: <%= @location.fees %></p>
     </div>
   </div>
