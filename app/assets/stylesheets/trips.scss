@@ -1,3 +1,32 @@
-// Place all the styles related to the trips controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.button_div{
+  display:flex;
+}
+.grid{
+  display:flex;
+  justify-content: center;
+}
+.description{
+  padding: 20px;
+  background-color: antiquewhite;
+  height: 100%;
+  width: 100%;
+}
+.extra{
+  display:flex;
+  justify-content: space-between;
+}
+.content  .trip_name{
+  display:flex;
+  justify-content: center;
+  text-align:center;
+  background-color: rgba(0, 232, 240, 0.445);
+  box-shadow: 2px 2px 2px black;
+  padding-right: 80px;
+  padding-left: 80px;
+  font-weight: bolder;
+  color: black;
+
+}
+.content .button{
+  padding: 20px;
+}

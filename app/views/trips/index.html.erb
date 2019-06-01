@@ -6,10 +6,12 @@
 <div class="ui grid">
   <% @trips.each do |trip| %>
     <div class="sixteen wide mobile eight wide tablet four wide computer column">
+   
+   
       <div class="ui card">
        
         <div class="content">
-          <%= link_to "#{trip.name}", trip, class: "header", style: "text-align:center;background-color: rgba(128, 128, 128, 0.445);"%>
+          <%= link_to "#{trip.name}", trip, class: "ui button trip_name"%>
         </div>
          <div class = "description">
         <%trip.locations.each do |l| %>
@@ -17,18 +19,18 @@
         <%end%>
       </div>
         <div class="extra content">
-          <div class="ui three buttons">
+          <div class="two_buttons">
               <%= link_to(edit_trip_path(trip)) do %>
             <div class="ui  green button inverted">
             Edit
             </div>
             <%end%>
               <%= link_to(trip_path(trip) , method: :delete, data: {confirm: "are you sure?"}) do%>
-            <div class="ui  red button inverted">
+            <div class="ui red button inverted">
               Delete
             </div>
             <%end%>
-             <%= link_to "View", trip_path(trip), class: "ui button green inverted"%>
+            
           </div>
         </div>
       </div>
