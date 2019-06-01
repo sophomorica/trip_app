@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  
   devise_for :users
-  root "trips#index"
+  root "static_pages#home"
   resources :trips do
     resources :locations
   end
 
-  resources :locations do 
+  resources :locations do
     resources :addresses
   end
 end
