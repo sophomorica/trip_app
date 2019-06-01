@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'semantic-ui-sass'
+gem 'google_places'
 
 group :development, :test do
   gem 'pry-rails'
