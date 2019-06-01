@@ -2,11 +2,11 @@
 <p><%= @location.image %></p>
 <p><%= @location.fees %></p>
 
-<%= @location.address.street %>
+<%# @location.address.street %>
 
 
 <div></div>
 <%= link_to "Edit Location", edit_trip_location_path([@trip, @location]) %>
 <%= link_to "Delete Location", trip_location_path(@trip, @location), method: :delete %>
-<%= link_to "Back to Locations", trip_locations_path(@trip) %>
-<%= @client %>
+<%= link_to "Back to All Locations", trip_locations_path(@trip) %>
+<%# @client %>
