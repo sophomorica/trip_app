@@ -3,11 +3,30 @@
 
 <h1>Location Location Location</h1>
 <%= link_to "Where to Next?", new_trip_location_path(@trip), class: "ui button" %>
-<ul>
+<div class = "ui grid">
   <% @trip.locations.each do |location| %>
-    <li><%= link_to location.name, trip_location_path(@trip, location) %></li>
+<%#= link_to location.name, trip_location_path(@trip, location) %>
+<div class="sixteen wide mobile eight wide tablet four wide computer column">
+  <div class= "ui card">
+    <div class = "content">
+      <%= link_to "#{location.name}", trip_location_path(@trip, location), class: "ui button location_name" %>
+      </div>
+      <div class = "description">
+          <%= location.address.street%>
+        </div>
+        <div class= "extra content">
+         
+        </div>
+
+
+
+
+      </div>
+    </div>
   <% end %>
-</ul>
+  
+</div>
+
 
 
 <div class ="button_div">
