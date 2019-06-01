@@ -27,7 +27,6 @@
   </div>
 </div>
 
-<%= @spot %>
 
 
 
@@ -36,11 +35,14 @@
 
 <div class= "buttons_div">
 
-<%= link_to "Back to Locations", trip_locations_path(@trip), class: "ui button blue" %>
+<%#= link_to "Back to Locations", trip_locations_path(@trip), class: "ui button blue" %>
 <%= link_to "Add Address", new_location_address_path(@location), class: "ui button green" %>
 <%= link_to "Edit Address", edit_location_address_path(@location,@location.address.id), class: "ui button yellow" %>
 <%= link_to "Back to All Locations", trips_path(@trip), class: "ui button green"%>
 
 <%= link_to "Edit Location", edit_trip_location_path([@trip, @location]), class: "ui button inverted blue" %>
 <%= link_to "Delete Location", trip_location_path(@trip, @location), class: "ui button inverted red", method: :delete %>
+</div>
+<div class = "spot">
+<%= @spot %>
 </div>
