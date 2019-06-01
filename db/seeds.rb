@@ -3,7 +3,7 @@ u = User.create(
   password: "password",
   password_confirmation: "password"
 )
-  3.times do 
+  5.times do 
     trip = Trip.create(
       name: Faker::TvShows::StarTrek.specie,
       start_date: Faker::Date.between(2.days.ago, Date.today),
