@@ -1,0 +1,9 @@
+
+
+<p>Author: <%= review.author %></p>
+<p> <%= review.body %></p>
+
+<%= link_to 'Edit review', edit_trip_review_path([@trip, @review]), class: 'ui button' %>
+
+<%= link_to 'Delete review', trip_review_path([@trip, @review]), method: :delete, class: 'ui button' %>
+<hr />
