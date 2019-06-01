@@ -1,5 +1,5 @@
 <h1>Location Location Location</h1>
-<%= link_to "Where to Next?", new_trip_location_path(@trip) %>
+<%= link_to "Where to Next?", new_trip_location_path(@trip), class: "ui button" %>
 <ul>
   <% @locations.each do |location| %>
     <li><%= link_to location.name, trip_location_path(@trip, location) %></li>
