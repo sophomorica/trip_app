@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
   before_action :set_trip
   before_action :set_spot
-  before_action :set_location, only: [:show, :edit, :update, :destroy]
+  before_action :set_location, only: [:show, :edit, :update, :destroy, :set_spot]
   
   def index
     @locations = @trip.locations.all
@@ -40,7 +40,7 @@ class LocationsController < ApplicationController
 
   def destroy
     @location.destroy
-    redirect_to trip_locations_path(@trip)
+    redirect_to trips_path
   end
 
   private
@@ -57,7 +57,13 @@ class LocationsController < ApplicationController
       params.require(:location).permit(:name, :fee, :image)
     end
 
+    def set_address
+      @address = Address.find(params[:location_id])
+    end
+
+
     def set_spot
+      @spot = Location.get_spot(@location.name)
     end
 
 

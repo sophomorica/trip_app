@@ -27,6 +27,18 @@
   color: black;
 
 }
+.content  .location_name{
+  display:flex;
+  justify-content: center;
+  text-align:center;
+  background-color: rgba(0, 232, 240, 0.445);
+  box-shadow: 2px 2px 2px black;
+  padding-right: 80px;
+  padding-left: 80px;
+  font-weight: bolder;
+  color: black;
+
+}
 .content .button{
   // padding-left: 80px;
   // padding-right: 80px;
@@ -34,4 +46,7 @@
 .two_buttons{
   display:flex;
   justify-content: space-around;
+}
+#name{
+  letter-spacing: 7px;
 }
