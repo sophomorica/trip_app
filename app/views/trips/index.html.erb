@@ -2,10 +2,36 @@
 <h1 id="name" style="text-align: center"> Welcome <%= current_user.full_name %></h1>
 
 <h1>View your trips</h1>
-<%= link_to "Create a new trip", new_trip_path %>
 <hr />
-<ul>
+<div class="ui grid">
   <% @trips.each do |trip| %>
-    <li><%= link_to trip.name, trip %></li>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column">
+      <div class="ui card">
+       
+        <div class="content">
+          <%= link_to "#{trip.name}", trip, class: "header", style: "text-align:center;background-color: rgba(128, 128, 128, 0.445);"%>
+        </div>
+         <div class = "description">
+        <%trip.locations.each do |l| %>
+            <h4 style = "text-align: center;"><%=l.name%></h4>
+        <%end%>
+      </div>
+        <div class="extra content">
+          <div class="ui three buttons">
+              <%= link_to(edit_trip_path(trip)) do %>
+            <div class="ui  green button inverted">
+            Edit
+            </div>
+            <%end%>
+              <%= link_to(trip_path(trip) , method: :delete, data: {confirm: "are you sure?"}) do%>
+            <div class="ui  red button inverted">
+              Delete
+            </div>
+            <%end%>
+             <%= link_to "View", trip_path(trip), class: "ui button green inverted"%>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
