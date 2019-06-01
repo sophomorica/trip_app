@@ -11,27 +11,28 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
-    render partial: "form"
+    render :new
   end
 
   def create
-    @trip = Trip.new(trip_params)
+    @trip = current_user.trips.new(trip_params)
+    
     if @trip.save
-    redirect_to trips_path
+    redirect_to trips_path(@trip.id)
     else 
-      render partial: "form"
+      render :new
     end
   end
 
   def edit
-    render partial: "form"
+   
   end
 
   def update
     if @trip.update(trip_params)
       redirect_to @trip
     else
-      render partial: "form"
+      render :edit
     end
   end
 

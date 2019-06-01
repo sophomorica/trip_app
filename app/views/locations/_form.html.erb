@@ -1,13 +1,17 @@
 <h1><%= @location.id ? "Edit Location" : "Create Location" %></h1>
 <hr />
-<%= form_for [@trip, @location] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, required: true, autofocus: true %>
-  <br />
-  <%= f.label :image %>
-  <%= f.text_field :image %>
-  <br />
+<%= form_with(model: @trip, @location, local: true, class: "ui form") do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.text_field :image, class: "input" %>
+  </div>
+  <div class="field">
   <%= f.label :fees %>
-  <%= f.text_field :fees %> 
-  <%= f.submit %>
+  <%= f.text_field :fees, class: "input" %> 
+  </div>
+  <%= f.submit nil, class: "ui blue button" %>
 <% end %>
