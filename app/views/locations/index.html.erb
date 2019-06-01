@@ -1,7 +1,7 @@
 <h1>Location Location Location</h1>
 <%= link_to "Where to Next?", new_trip_location_path(@trip) %>
 <ul>
-  <%= @locations.each do |lcoation| %>
+  <% @locations.each do |location| %>
     <li><%= link_to location.name, trip_location_path(@trip, location) %></li>
   <% end %>
 </ul>
