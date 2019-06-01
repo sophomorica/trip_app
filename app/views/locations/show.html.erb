@@ -2,7 +2,13 @@
 <p><%= @location.image %></p>
 <p><%= @location.fees %></p>
 
-<%# @location.address.street %>
+<%= @location.address.street %>
+<%= @location.address.city %>
+<%= @location.address.state %>
+<%= @location.address.lat %>
+<%= @location.address.long %>
+<%= @client %>
+
 
 <div></div>
 <%= link_to "Edit Location", edit_trip_location_path([@trip, @location]) %>
@@ -10,6 +16,5 @@
 <%= link_to "Back to Locations", trip_locations_path(@trip) %>
 <%= link_to "Add Address", new_location_address_path(@location) %>
 <%= link_to "Edit Address", edit_location_address_path(@location) %>
-
 <%= link_to "Back to All Locations", trip_locations_path(@trip) %>
 <%# @client %>

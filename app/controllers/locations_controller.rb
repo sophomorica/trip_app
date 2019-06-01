@@ -1,5 +1,6 @@
 class LocationsController < ApplicationController
   before_action :set_trip
+  before_action :set_spot
   before_action :set_location, only: [:show, :edit, :update, :destroy]
   
   def index
@@ -55,5 +56,11 @@ class LocationsController < ApplicationController
     def location_params
       params.require(:location).permit(:name, :fee, :image)
     end
+
+    def set_spot
+      @spot = Location.get_spot()
+    end
+
+
 
 end
