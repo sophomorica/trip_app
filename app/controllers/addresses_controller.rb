@@ -45,7 +45,7 @@ before_action :set_address, only: [:show, :edit, :update, :destroy]
   private
 
   def address_params
-    params.require(:address).permit(:street, :city, :state, :lat, :long, :location_id)
+    params.require(:address).permit(:street, :city, :state, :lat, :long)
   end
 
   def set_address

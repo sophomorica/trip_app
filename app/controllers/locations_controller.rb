@@ -57,6 +57,11 @@ class LocationsController < ApplicationController
       params.require(:location).permit(:name, :fee, :image)
     end
 
+    def set_address
+      @address = Address.find(params[:location_id])
+    end
+
+
     def set_spot
     end
 
