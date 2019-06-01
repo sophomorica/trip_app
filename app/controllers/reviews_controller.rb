@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update(review_params)
-     redirect_to trip_review_path(@trip, @review)
+     redirect_to trip_path(@trip)
    else
      render :edit
     end
