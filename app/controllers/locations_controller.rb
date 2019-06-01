@@ -11,7 +11,7 @@ class LocationsController < ApplicationController
 
   def new
     @location = @trip.locations.new
-    render :new
+    render partial: "form"
   end
 
   def create
@@ -20,20 +20,20 @@ class LocationsController < ApplicationController
     if @location.save
       redirect_to trip_location_path(@trip.id, @location.id)
     else
-      render :new
+      render partial: "form"
     end
 
   end
 
   def edit
-    render :edit
+    render partial: "form"
   end
 
   def update
     if @location.update(location_params)
       redirect_to trip_location_path(@trip, @location)
     else
-      render :edit
+      render partial: "form"
     end
   end
 
