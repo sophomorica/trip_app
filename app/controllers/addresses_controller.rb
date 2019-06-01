@@ -10,11 +10,15 @@ before_action :set_address, only: [:show, :edit, :update, :destroy]
   end
 
   def new
-    @address = @location.addresses.new
+    @address = @location.create_address
   end
 
   def create
-      @address = Address.new(address_params, @location.id)
+    # @user = current_user
+    # @shop = Shop.create(params[:shop])
+    # @user.shop = @shop
+
+      @address = Address.create(params[:location])
       if @address.save
       redirect_to location_address_path(@location.trip_id, @location)
       else
