@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: 'ui red button' %>
-=======
+
 <nav class = "ui menu">
-  <%= link_to 'Adventurist', root_path, class: "item" %> 
+  <%= link_to 'Adventurist', root_path, class: "item" %>
   <% if current_user%>
   <%= link_to "Trips", trips_path, class: "item"  %>
   <%= link_to "Add Trip", new_trip_path, class: "item"  %>
@@ -16,4 +16,3 @@
     <% end%>
   </div>
 </nav>
->>>>>>> 230fad110574d532eb41e3b2008f5a1c50bb9c0c
