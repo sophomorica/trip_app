@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
   before_action :set_trip
   before_action :set_spot
-  before_action :set_location, only: [:show, :edit, :update, :destroy]
+  before_action :set_location, only: [:show, :edit, :update, :destroy, :set_spot]
   
   def index
     @locations = @trip.locations.all
@@ -63,6 +63,7 @@ class LocationsController < ApplicationController
 
 
     def set_spot
+      @spot = Location.get_spot(@location.name)
     end
 
 

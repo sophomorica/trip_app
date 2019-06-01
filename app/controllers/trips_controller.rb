@@ -2,7 +2,7 @@ class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
   def index
-    @trips = Trip.all
+     @trips = Trip.all
   end
   
 
@@ -43,7 +43,7 @@ class TripsController < ApplicationController
 
   private
     def set_trip
-      @trip = current_user.trips.find(params[:id])
+      @trips = current_user.trips.find(params[:id])
     end
 
     def trip_params
