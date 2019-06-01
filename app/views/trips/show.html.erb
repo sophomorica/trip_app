@@ -15,7 +15,7 @@
           <%= location.address.street%>
         </div>
         <div class= "extra content">
-         
+
         </div>
 
 
@@ -24,10 +24,19 @@
       </div>
     </div>
   <% end %>
-  
+
 </div>
 
+<h1>reviews</h1>
+<%= link_to 'add review', new_trip_review_path(@trip), class: "ui button" %>
+<hr />
 
+<% @trip.reviews.each do |review| %>
+
+<%= render 'reviews/review', {review: review } %>
+
+
+<% end %>
 
 <div class ="button_div">
 
