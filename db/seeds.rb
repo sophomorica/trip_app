@@ -8,15 +8,24 @@ u = User.create(
     name: Faker::TvShows::StarTrek.location,
     start_date: Faker::Date.between(2.days.ago, Date.today),
     end_date: Faker::Date.forward(3)
-    trip_id: u.id
+    user_id: u.id
   )
   2.times do 
     Location.create(
-      name: Faker::,
+      name: Faker::Address.state,
       fees: ,
       image:,
+      trip_id: trip.id
 
     )
+    2.times do
+      street:Faker::Address.street_address,
+      city:Faker::Address.city,
+      state:Faker::Address.state,
+      lat:Faker::Address.latitude,
+      long:Faker::Address.longitude,
+      location_id: location.id
+    end
     
   end
 end
