@@ -1,6 +1,6 @@
 class AddressesController < ApplicationController
 before_action :set_location
-before_action :set_address only: [:show, :edit, :update, :destroy]
+before_action :set_address, only: [:show, :edit, :update, :destroy]
 
   def index
     @addresses = @location.addresses
@@ -10,7 +10,7 @@ before_action :set_address only: [:show, :edit, :update, :destroy]
   end
 
   def new
-    @address = @location.address.new
+    @address = @location.addresses.new
   end
 
   def create
@@ -27,7 +27,7 @@ before_action :set_address only: [:show, :edit, :update, :destroy]
 
   def update
     if @address.update(address_params)
-      redirect_to trip_location_path(@location.trip_id,@list)
+      redirect_to trip_location_path(@location.trip_id,@location)
     else
       render :edit
     end
@@ -45,15 +45,10 @@ before_action :set_address only: [:show, :edit, :update, :destroy]
   end
 
   def set_address
-    @address = Board.find(params[:id])
+    @address = Address.find(params[:id])
   end
 
   def set_location
-    @location = location.find(params[:location_id])
+    @location = Location.find(params[:location_id])
   end
-
-  def set_trip
-    @board = Board.find(@location.trip_id)
-  end
-
 end
