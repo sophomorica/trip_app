@@ -58,7 +58,6 @@ class LocationsController < ApplicationController
     end
 
     def set_spot
-      @spot = Location.get_spot()
     end
 
 
